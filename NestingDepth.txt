@@ -1,0 +1,93 @@
+#include <bits/stdc++.h>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<unordered_map>
+#include<set>
+#include <iterator>
+#include <string>
+#include <ctype.h>
+#include<vector>
+#define ll long long 
+ 
+using namespace std;
+ 
+ 
+//int ma=100000001;
+//long long int a[ma];
+long long int mod=1000000007;
+long long int modulo=998244353;
+long long unsigned int asd=10000000000000000;
+ 
+ 
+//( a + b) % c = ( ( a % c ) + ( b % c ) ) % c
+
+ 
+int main()
+{ 
+  ll t;cin>>t;
+  for(int k=1;k<=t;k++)
+  {
+      string s;cin>>s;
+      vector<pair<char,int>>v;
+      int count=1;
+      char ch;
+      
+      for(int i=0;i<s.length()-1;i++)
+      {
+          if(s[i]==s[i+1]){count++;ch=s[i];}
+          else
+          { ch=s[i];
+              v.push_back(make_pair(ch,count));
+              count=1;
+          }
+          
+      }
+      v.push_back(make_pair(s[s.length()-1],count));
+      
+    //  for(int i=0;i<v.size();i++)cout<<v[i].first<<" "<<v[i].second<<endl;
+    //  cout<<endl;
+      
+      int open=0;
+      int close=0;
+      
+      string ans="";
+      for(int i=0;i<v.size();i++)
+      {
+          int b=v[i].first-'0';
+          if(b>open)
+          {
+              for(int j=0;j<b-open;j++)ans+="(";
+          }
+          else
+          {
+               for(int j=0;j<open-b;j++)ans+=")";
+          }
+          for(int j=0;j<v[i].second;j++)ans+=v[i].first;
+          if(i==v.size()-1)
+          {
+              for(int j=0;j<b;j++)ans+=")";
+          }
+          open=b;
+          
+          
+          
+          
+          
+      }
+      
+      
+     
+        
+    
+      cout<<"Case #"<<k<<": "<<ans<<endl;
+      
+      
+      
+  }
+  
+  
+  
+ 
+    return 0;
+}

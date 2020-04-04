@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<unordered_map>
+#include<set>
+#include <iterator>
+#include <string>
+#include <ctype.h>
+#include<vector>
+#define ll long long 
+ 
+using namespace std;
+ 
+ 
+//int ma=100000001;
+//long long int a[ma];
+long long int mod=1000000007;
+long long int modulo=998244353;
+long long unsigned int asd=10000000000000000;
+ 
+ 
+//( a + b) % c = ( ( a % c ) + ( b % c ) ) % c
+
+ 
+int main()
+{ 
+  int t;cin>>t;
+  int tc=0;
+  string b;
+  cin>>b;
+  
+  while(t--)
+  {
+      tc++;
+      char in;
+      string ans="";
+      for(int i=0;i<10;i++)ans+="0";
+      
+      for(int i=1;i<11;i++)
+      {
+          cout<<i<<endl;
+          cout.flush();
+          cin>>in;
+          ans[i-1]=in;
+          
+      }
+      cout<<ans<<endl;
+      cout.flush();
+      char fin;
+      cin>>fin;
+      if(fin=='Y')continue;
+      else return 0;
+  }
+      
+      
+  
+  
+  
+ 
+    return 0;
+}

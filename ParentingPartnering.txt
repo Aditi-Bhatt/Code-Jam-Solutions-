@@ -1,0 +1,104 @@
+#include <bits/stdc++.h>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<unordered_map>
+#include<set>
+#include <iterator>
+#include <string>
+#include <ctype.h>
+#include<vector>
+#define ll long long 
+ 
+using namespace std;
+ 
+ 
+//int ma=100000001;
+//long long int a[ma];
+long long int mod=1000000007;
+long long int modulo=998244353;
+long long unsigned int asd=10000000000000000;
+ 
+ 
+//( a + b) % c = ( ( a % c ) + ( b % c ) ) % c
+
+ 
+int main()
+{ 
+  ll t;cin>>t;
+  for(int k=1;k<=t;k++)
+  {
+     
+       int n;cin>>n;
+       map<pair<int,int>,int>mp;
+       vector<pair<int,int>>v;
+       vector<int>c;c.push_back(0);
+       vector<int>j;j.push_back(0);
+       char ans[n];
+       for(int i=0;i<n;i++)ans[i]='C';
+       
+       
+       int w=0;
+       
+       for(int i=0;i<n;i++)
+       {
+           
+           int z,x;cin>>z>>x;
+           v.push_back(make_pair(z,x));
+           
+           mp[{z,x}]=i;
+       }
+       sort(v.begin(),v.end());
+       for(int i=0;i<v.size();i++)
+       {
+           if(v[i].first>=c[c.size()-1])
+           {
+               c.push_back(v[i].second);
+               ans[mp[{v[i].first,v[i].second}]]='C';
+               
+               
+               
+               
+               
+           }
+           else if(v[i].first>=j[j.size()-1])
+           {
+               
+               
+                j.push_back(v[i].second);
+               ans[mp[{v[i].first,v[i].second}]]='J';
+               
+               
+               
+           }
+           else
+           {
+               w=1;break;
+           }
+           
+           
+           
+           
+       }
+      
+     
+        
+    
+     
+     
+     if(w)cout<<"Case #"<<k<<": "<<"IMPOSSIBLE"<<endl;
+     else
+     { cout<<"Case #"<<k<<": ";
+       for(int i=0;i<n;i++)cout<<ans[i];
+       cout<<endl;
+     }
+      
+      
+      
+  }
+  
+  
+  
+ 
+    return 0;
+}
